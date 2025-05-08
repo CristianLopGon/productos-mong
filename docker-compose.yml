@@ -1,0 +1,27 @@
+services:
+  mongo:
+    image: mongo:8.0.9-noble
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: shop
+    networks:
+      - product-net
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: product-app
+    ports:
+      - "8080:8080"
+    networks:
+      - product-net
+volumes:
+  mongo_data:
+networks:
+  product-net:
+    driver: bridge
