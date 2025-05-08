@@ -10,7 +10,6 @@ public class Product {
 	private final Map<String, Integer> stock;
 
 	public Product(String id, String name, int salesUnits, Map<String, Integer> stock) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.salesUnits = salesUnits;

@@ -20,6 +20,19 @@ services:
       - "8080:8080"
     networks:
       - product-net
+  test-runner:
+     build:
+        context: .
+        dockerfile: Dockerfile.test
+     environment:
+        SPRING_PROFILES_ACTIVE: test
+     depends_on:
+        - mongo
+     volumes:
+        - ./jacoco-reports:/app/target/jacoco-reports
+        - ./coverage-reports:/app/target/coverage-reports
+     networks:
+        - product-net
 volumes:
   mongo_data:
 networks:

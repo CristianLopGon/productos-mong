@@ -16,13 +16,6 @@ import jakarta.validation.ConstraintViolationException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-	/*
-	 * @ExceptionHandler(SearchNotFoundException.class) public
-	 * ResponseEntity<Map<String, String>> handleNotFound(SearchNotFoundException
-	 * ex) { return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error",
-	 * ex.getMessage())); }
-	 */
-
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ResponseEntity<Map<String, String>> handleBadRequest(IllegalArgumentException ex) {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));

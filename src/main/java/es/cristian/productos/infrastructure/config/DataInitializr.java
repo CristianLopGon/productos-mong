@@ -32,7 +32,7 @@ public class DataInitializr {
 				repository.saveAll(productos);
 				logger.info("Products loaded from JSON");
 			} else {
-				logger.info("Products was loaded before");
+				logger.info("Products were loaded before");
 			}
 		};
 	}

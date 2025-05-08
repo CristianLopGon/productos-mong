@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "a9cf6e5c-7b64-4302-9241-60d8e00d22e6",
+		"name": "Products API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13640987"
+	},
+	"item": [
+		{
+			"name": "Sorted products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzQ2NzQ0MDYxLCJleHAiOjE3NDY3NDQ2NjF9.nOxcztLDtG-imC8oeHlc1QI6N9f2YGRfrkbbJJXcCNk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"salesWeight\": 0.7,\r\n    \"stockRatioWeight\": 0.3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/sort",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"sort"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "\"GET\" token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/login/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
